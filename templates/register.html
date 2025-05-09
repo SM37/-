@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load form_filters %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+    <h2 class="mb-4 text-center">Регистрация</h2>
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                Пожалуйста, исправьте ошибки ниже.
+            </div>
+        {% endif %}
+
+        <div class="mb-3">
+            <label for="id_username" class="form-label">Имя пользователя</label>
+            {{ form.username|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            <label for="id_password1" class="form-label">Пароль</label>
+            {{ form.password1|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            <label for="id_password2" class="form-label">Подтверждение пароля</label>
+            {{ form.password2|add_class:"form-control" }}
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Зарегистрироваться</button>
+    </form>
+</div>
+{% endblock %}
