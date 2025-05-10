@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Добро пожаловать в Шустрики{% endblock %}
+
+{% block content %}
+<header class="bg-primary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4">Добро пожаловать в Шустрики!</h1>
+    <p class="lead">Онлайн-раскраска и подписка для детей и родителей</p>
+    {% if user.is_authenticated %}
+      <a href="{% url 'survey:create' %}" class="btn btn-light btn-lg mt-3">Оформить подписку</a>
+    {% else %}
+      <a href="{% url 'accounts:login' %}" class="btn btn-light btn-lg mt-3">Войти в аккаунт</a>
+    {% endif %}
+  </div>
+</header>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="{% static 'images/coloring.svg' %}" alt="Раскраски" class="mb-3" width="80">
+        <h5>Раскраски для детей</h5>
+        <p>Красочные и развивающие материалы для малышей.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'images/gift.svg' %}" alt="Подарки" class="mb-3" width="80">
+        <h5>Подарки за подписку</h5>
+        <p>Сюрпризы и бонусы для наших подписчиков.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'images/secure.svg' %}" alt="Безопасность" class="mb-3" width="80">
+        <h5>Безопасность и конфиденциальность</h5>
+        <p>Мы заботимся о ваших данных и соблюдаем законы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

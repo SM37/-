@@ -7,3 +7,4 @@ __pycache__/
 __pycache__/
 db.sqlite3
 credentials/credentials.json
+google_sheets.py
