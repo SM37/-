@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Подарки{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Доступные подарки</h2>
+
+    <!-- Пример карточек подарков -->
+    <div class="row">
+        <!-- Пример подарка -->
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Подарок">
+                <div class="card-body">
+                    <h5 class="card-title">Подарок №1</h5>
+                    <p class="card-text">Описание подарка или условия получения.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Другие подарки можно добавить по аналогии -->
+    </div>
+</div>
+{% endblock %}
